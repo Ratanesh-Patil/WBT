@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        
+            function validatenum(){
+                var num=document.getElementById("num").value;
+                if(num.lenght > 0){
+                    document.getElementById("numerr").innerHTML="";
+                    return true;
+                }else {
+                    document.getElementById("numerr").innerHTML="Can not be empty";
+                    return false;
+                }
+            }
+
+            function validatename(){
+                var nm=document.getElementById("name").value;
+                if(nm.trim().lenght > 0){
+                    document.getElementById("nameerr").innerHTML="";
+                    return true;
+
+                }else {
+                    document.getElementById("nameerr").innerHTML="Enter the name ";
+                    return false;
+                }
+            }
+            function validatepass(){
+                var pass=document.getElementById("password").value;
+                var cpass=document.getElementById("cpassword").value;
+                if(pass===cpass && pass != "" ){
+                    document.getElementById("passerr").innerHTML="";
+                    return true;
+
+                }else {
+                    document.getElementById("passerr").innerHTML="Enter the correct password ";
+                    return false;
+                }
+            }
+            function validateMob(){
+                var mob=document.getElementById("mob").value;
+               
+                if( mob.lenght == 10 ){
+                    document.getElementById("moberr").innerHTML="";
+                    return true;
+
+                }else {
+                    document.getElementById("moberr").innerHTML="Enter the correct Mobile number ";
+                    return false;
+                }
+            }
+            function validateState(){
+                var state=document.getElementById("state").value;
+               
+                if( state != 1){
+                    document.getElementById("stateerr").innerHTML="";
+                    return true;
+
+                }else {
+                    document.getElementById("stateerr").innerHTML="Select the State ";
+                    return false;
+                }
+            }
+            // function validatePayment(){
+            //     var pay=document.getElementById("payment").value;
+            //     for(var i=0;i<pay.length;i++){
+            //     if( pay.lenght.checked){
+            //         document.getElementById("payerr").innerHTML="";
+            //         return true;
+
+            //     }else{
+                    
+            //         document.getElementById("payerr").innerHTML="Select the State ";
+            //         return false;
+            //     }}
+             
+               
+            // }
+
+
+
+
+            function Validate(){
+               flag=validatename();
+                flag1=validatenum();
+                  flag2= validatepass();
+                  flag3=validateMob();
+                  flag4=validateState();
+                //   flag5=validatePayment();
+
+
+                if(flag && flag1 && flag2 && flag3 && flag4){
+                    return true;
+                }else{
+                    return false;
+                }
+            }
+
+
+    </script>
+</head>
+<body>
+    <table border="2px">
+        <form action="" onsubmit="return Validate()">
+            <tr>
+                <td><label for="num">Cnum </label> </td>
+                <td> <input type="text" name="num" id="num"> </td>
+                <td id="numerr"></td>
+            </tr>
+            <tr>
+                <td><label for="name">Cname </label> </td>
+                <td> <input type="text" name="name" id="name"> </td>
+                <td id="nameerr"></td>
+            </tr>
+            <tr>
+                <td><label for="email">Email </label> </td>
+                <td> <input type="email" name="email" id="email"> </td>
+                <td id=""></td>
+            </tr>
+            <tr>
+                <td><label for="password">password </label> </td>
+                <td> <input type="password" name="password" id="password" size="8"> </td>
+                <td id="passerr"></td>
+            </tr>
+            <tr>
+                <td><label for="cpassword">password </label> </td>
+                <td> <input type="password" name="cpassword" id="cpassword"> </td>
+                <td id="passerr1"></td>
+            </tr>
+            <tr>
+                <td><label for="mob">Mobile </label> </td>
+                <td> <input type="number" name="mob" id="mob" size="10"> </td>
+                <td id="moberr"></td>
+            </tr>
+            <tr>
+                <td><label for="city">City </label> </td>
+                <td> <input type="text" name="city" id="city" > </td>
+                <td id="cityerr"></td>
+            </tr>
+            <tr>
+                <td><label for="state">State </label> </td>
+                <td> 
+                <select name="state" id="state">
+                    <option value="1">----select state</option>
+                    <option value="Pune">Pune</option>
+                    <option value="Mumbai">Mumbai</option>
+                    <option value="kolhapur">kolhapur</optionPune>
+                </select>    
+                </td>
+                <td id="stateerr"></td>
+            </tr>
+            <tr>
+                <td><label for="pin">Pincode </label> </td>
+                <td> <input type="number" name="pin" id="pin" max="6"> </td>
+                <td id="pinerr"></td>
+            </tr>
+            <tr>
+                <td><label for="payment">Hobbies</label></td>
+                <td>
+                    <input type="radio" name="payment" id="Credit " value="Reading ">
+                    <label for="Credit">Credit</label>
+                    <input type="radio" name="payment" id="Debit " value="biking ">
+                    <label for="Debit">Debit</label>
+                    <input type="radio" name="payment" id="UPI " value="trekking ">
+                    <label for="UPI">UPI</label>
+                </td>
+                <td id="payerr"></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td><button type="submit" name="btn" id="btn" value="submit" onsubmit="Validate()">Submit</button></td>
+                <td></td>
+            </tr>
+        </form>
+
+    </table>
+</body>
+</html>
