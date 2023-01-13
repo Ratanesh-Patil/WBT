@@ -1,22 +1,16 @@
-
-import { BrowserRouter , Routes,Route} from 'react-router-dom';
-import Home from './componets/Home';
-import Register from './componets/Register';
-import Navbar from './componets/Navbar';
-import DeleteStudent from './componets/DeleteStudent';
+import { BrowserRouter,Routes,Route } from 'react-router-dom';
+import './App.css';
+import AddStudent from './componets/AddStudent';
+import StudentList from './componets/StudentList';
 
 function App() {
-  
   return (
- <BrowserRouter>
- <Navbar></Navbar>
+  <BrowserRouter>
   <Routes>
-    <Route path="/" element={<Home></Home>}></Route>
-    <Route path="/Register" element={<Register></Register>}></Route>
-    <Route path="/delete/rollno" element={<DeleteStudent></DeleteStudent>}></Route>
+    <Route path="/" element={<StudentList></StudentList>}></Route>
+    <Route path='/Addstudent' element={<AddStudent></AddStudent>}></Route>
   </Routes>
-
- </BrowserRouter>
+  </BrowserRouter>
   );
 }
 
