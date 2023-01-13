@@ -7,7 +7,7 @@ function Navbar() {
         <div>
             <Link to='/'>Home</Link>
             <Link to='/Register'>Register</Link>
-            <Link to='/delete/rollno'>DeleteStudent</Link>
+            <Link to='/view/name'>SearchStudent</Link>
             
         </div>
 

@@ -7,6 +7,7 @@ import { Link } from 'react-router-dom'
 function Home() {
 
     const [stud,setStud]=useState([]);
+    
   const url= "http://localhost:3002"
   useEffect(()=>{
     axios.get(url).then((resp)=>{
@@ -15,6 +16,7 @@ function Home() {
     })
 
   },[])
+
   
   const deleteData=(rollno)=>{
     alert(rollno)
@@ -22,6 +24,7 @@ function Home() {
       console.log(result.data)
     })
   }
+
   const renderdata=()=>{
      return (stud.map((s)=>{
         return (
@@ -31,7 +34,14 @@ function Home() {
             <td>{s.rollno}</td>
             <td>{s.email}</td>
             <td>{s.batch}</td>
-            <td> <button type="button" name='btn' id="delete" onClick={()=>deleteData(s.rollno)}>Delete</button></td>
+            <td> <button type="button" name='btn' id="delete" onClick={()=>deleteData(s.rollno)}>Delete</button>
+            &nbsp;&nbsp;&nbsp;&nbsp;
+           
+            
+         
+            
+            
+            </td>
           </tr>
         
           
